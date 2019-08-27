@@ -1,4 +1,4 @@
-# ParkingLot
+# ParkingSpot
 There is a Parking lot: which has 20 Parking spots
 And assume only there are three types of vehicles, which are Bike, Car, Bus
 
