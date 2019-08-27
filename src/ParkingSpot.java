@@ -1,8 +1,15 @@
 public class ParkingSpot {
-    public boolean occupied=true;
+    private boolean occupied;
 
-    public boolean isSpotOccupied(Vehicle vehicle, int TOTAL_SPOT){
+    public ParkingSpot() {
+        occupied = true;
+    }
 
-        return occupied;
+    public boolean isSpotOccupied(int TOTAL_SPOT,int occupiedSpot,Vehicle vehicle){
+        int vacantSpot=TOTAL_SPOT-occupiedSpot;
+        if (vacantSpot>=vehicle.spotNeed){
+            return occupied;
+        }
+        return !occupied;
     }
 }
