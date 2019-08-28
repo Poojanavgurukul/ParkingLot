@@ -1,3 +1,4 @@
-public class Vehicle {
-    public int spotNeed;
+public abstract class Vehicle {
+    int size;
+    String licenseNumber;
 }

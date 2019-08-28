@@ -1,5 +1,6 @@
 public class Car extends Vehicle {
-    public Car(){
-        spotNeed=2;
+    public Car(String licenseNumber) {
+        this.licenseNumber=licenseNumber;
+        size=2;
     }
 }
