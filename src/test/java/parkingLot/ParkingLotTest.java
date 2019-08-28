@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ParkingLotTest {
     @Test
-    public void vehicleCanPark() {
+    public void vehicleShouldPark() {
         Car car=new Car("xyz12");
         String expected = "Vehicle can park";
         ParkingLot parkingLot=new ParkingLot();
