@@ -1,11 +1,19 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ParkingLot {
     private final int TOTAL_SPOTS=20;
     private int occupiedSpot=0;
-    List<Vehicle>totalVehicle= Arrays.asList();
+    List<Vehicle> vehicles= new ArrayList<>();
 
+    public String park(Vehicle vehicle){
+        if(isSpotAvailable(vehicle.size)){
+            vehicles.add(vehicle);
+            setOccupiedSpot(occupiedSpot+=vehicle.size);
+            return "Vehicle can park";
+        }
+        return "Vehicle can't park";
+    }
     public boolean isSpotAvailable(int spotNeeded){
         int vacantSpot=TOTAL_SPOTS-getOccupiedSpot();
         if (vacantSpot>=spotNeeded){
@@ -17,6 +25,6 @@ public class ParkingLot {
         return occupiedSpot;
     }
     public void setOccupiedSpot(int occupiedSpot) {
-        this.occupiedSpot += occupiedSpot;
+        this.occupiedSpot = occupiedSpot;
     }
 }
