@@ -22,7 +22,7 @@ public class ParkingLotTest {
         ParkingLot parkingLot = new ParkingLot();
         parkingLot.park(car);
         parkingLot.park(bike);
-        String actual = parkingLot.unPark(parkingLot.getVehicles(), bike);
+        String actual = parkingLot.unPark(parkingLot.getSpots(), bike);
         assertEquals(expected, actual);
     }
 
@@ -33,7 +33,7 @@ public class ParkingLotTest {
         String expected = "Vehicle not in parking";
         ParkingLot parkingLot = new ParkingLot();
         parkingLot.park(car);
-        String actual = parkingLot.unPark(parkingLot.getVehicles(), bike);
+        String actual = parkingLot.unPark(parkingLot.getSpots(), bike);
         assertEquals(expected, actual);
     }
 

@@ -7,11 +7,12 @@ public class ParkingLot {
     private final int TOTAL_SPOTS=20;
     private int occupiedSpot=0;
 
-    List<Vehicle> vehicles= new ArrayList<>();
+   // List<Spot> spots = new ArrayList<>();
+     List<Vehicle> spots = new ArrayList<>();
 
     public String park(Vehicle vehicle){
         if(isSpotAvailable(vehicle.size)){
-            vehicles.add(vehicle);
+            spots.add(vehicle);
             setOccupiedSpot(occupiedSpot+=vehicle.size);
             return "Vehicle can park";
         }
@@ -41,7 +42,7 @@ public class ParkingLot {
     public void setOccupiedSpot(int occupiedSpot) {
         this.occupiedSpot = occupiedSpot;
     }
-    public List<Vehicle> getVehicles() {
-        return vehicles;
+    public List<Vehicle> getSpots() {
+        return spots;
     }
 }
