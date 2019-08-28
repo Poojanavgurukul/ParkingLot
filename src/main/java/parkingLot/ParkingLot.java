@@ -26,7 +26,7 @@ public class ParkingLot {
                 return vehicleType.licenseNumber +" Vehicle unPark";
             }
         }
-        return null;
+        return "Vehicle not in parking";
     }
     public boolean isSpotAvailable(int spotNeeded){
         int vacantSpot=TOTAL_SPOTS-getOccupiedSpot();
