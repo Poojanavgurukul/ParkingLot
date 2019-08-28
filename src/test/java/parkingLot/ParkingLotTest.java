@@ -9,8 +9,9 @@ public class ParkingLotTest {
     public void vehicleShouldPark() {
         Car car = new Car("xyz12");
         String expected = "Vehicle can park";
+        Spot spot=new Spot();
         ParkingLot parkingLot = new ParkingLot();
-        String actual = parkingLot.park(car);
+        String actual = parkingLot.park(spot,car);
         assertEquals(expected, actual);
     }
 
@@ -20,8 +21,9 @@ public class ParkingLotTest {
         Bike bike = new Bike("xas14");
         String expected = "xas14 Vehicle unPark";
         ParkingLot parkingLot = new ParkingLot();
-        parkingLot.park(car);
-        parkingLot.park(bike);
+        Spot spot=new Spot();
+        parkingLot.park(spot,car);
+        parkingLot.park(spot,bike);
         String actual = parkingLot.unPark(parkingLot.getSpots(), bike);
         assertEquals(expected, actual);
     }
@@ -32,26 +34,9 @@ public class ParkingLotTest {
         Bike bike = new Bike("xas14");
         String expected = "Vehicle not in parking";
         ParkingLot parkingLot = new ParkingLot();
-        parkingLot.park(car);
+        Spot spot=new Spot();
+        parkingLot.park(spot,car);
         String actual = parkingLot.unPark(parkingLot.getSpots(), bike);
         assertEquals(expected, actual);
-    }
-
-    @Test
-    public void noSpotAvailableInParking() {
-        Car car = new Car("xyz12");
-        Car car1 = new Car("xas14");
-        Bus bus = new Bus("we223");
-        Bus bus1 = new Bus("as241");
-        Bus bus2 = new Bus("vb261");
-        Bus bus3 = new Bus("gj189");
-        ParkingLot parkingLot = new ParkingLot();
-        parkingLot.park(car);
-        parkingLot.park(car1);
-        parkingLot.park(bus);
-        parkingLot.park(bus1);
-        parkingLot.park(bus2);
-        parkingLot.park(bus3);
-        assertFalse("noSpot Available In Parking", parkingLot.isSpotAvailable(parkingLot.getOccupiedSpot()));
     }
 }
