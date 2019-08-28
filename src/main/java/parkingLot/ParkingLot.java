@@ -6,6 +6,7 @@ import java.util.List;
 public class ParkingLot {
     private final int TOTAL_SPOTS=20;
     private int occupiedSpot=0;
+
     List<Vehicle> vehicles= new ArrayList<>();
 
     public String park(Vehicle vehicle){
@@ -16,6 +17,7 @@ public class ParkingLot {
         }
         return "Vehicle can't park";
     }
+
     public boolean isSpotAvailable(int spotNeeded){
         int vacantSpot=TOTAL_SPOTS-getOccupiedSpot();
         if (vacantSpot>=spotNeeded){
@@ -28,5 +30,8 @@ public class ParkingLot {
     }
     public void setOccupiedSpot(int occupiedSpot) {
         this.occupiedSpot = occupiedSpot;
+    }
+    public List<Vehicle> getVehicles() {
+        return vehicles;
     }
 }
