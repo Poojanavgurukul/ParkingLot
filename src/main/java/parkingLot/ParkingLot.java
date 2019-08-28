@@ -18,6 +18,16 @@ public class ParkingLot {
         return "Vehicle can't park";
     }
 
+    public String unPark(List<Vehicle> vehicles,Vehicle vehicle){
+        for (Vehicle vehicleType:vehicles) {
+            if (vehicleType==vehicle){
+                vehicles.remove(vehicle);
+                setOccupiedSpot(occupiedSpot-=vehicle.size);
+                return vehicleType.licenseNumber +" Vehicle unPark";
+            }
+        }
+        return null;
+    }
     public boolean isSpotAvailable(int spotNeeded){
         int vacantSpot=TOTAL_SPOTS-getOccupiedSpot();
         if (vacantSpot>=spotNeeded){
