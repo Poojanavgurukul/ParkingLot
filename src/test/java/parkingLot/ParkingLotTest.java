@@ -25,4 +25,14 @@ public class ParkingLotTest {
         String actual = parkingLot.unPark(parkingLot.getVehicles(), bike);
         assertEquals(expected, actual);
     }
+    @Test
+    public void parkingLotShouldUnParkOtherVehicle() {
+        Car car = new Car("xyz12");
+        Bike bike = new Bike("xas14");
+        String expected ="Vehicle not in parking";
+        ParkingLot parkingLot = new ParkingLot();
+        parkingLot.park(car);
+        String actual = parkingLot.unPark(parkingLot.getVehicles(), bike);
+        assertEquals(expected, actual);
+    }
 }
