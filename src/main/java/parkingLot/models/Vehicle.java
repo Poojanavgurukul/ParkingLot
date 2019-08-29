@@ -1,6 +1,6 @@
-package parkingLot;
+package parkingLot.models;
 
 public abstract class Vehicle {
-    int size;
+    int spotNeeded;
     String licenseNumber;
 }
